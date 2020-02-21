@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class GymApp {
@@ -18,15 +19,12 @@ public class GymApp {
 
         // initial persons //
         Person miguel = new Person("Miguel","Vera",285, 1,new String[]{"lose 50lbs"," get stronger"});
-//        System.out.println(miguel.firstName);
-        Person ashley = new Person("Ashely","Gomez",110, 2,new String[]{"lose 5lbs"," get stronger"});
-//        System.out.println(miguel.firstName);
-        Person heather = new Person("Heather","Gibson",105, 3,new String[]{"lose 5lbs"," get stronger"});
-//        System.out.println(miguel.firstName);
-//
-//        miguel.setWeight(110);
-//        System.out.println(miguel.getWeight());
 
+        Person ashley = new Person("Ashely","Gomez",110, 2,new String[]{"lose 5lbs"," get stronger"});
+
+        Person heather = new Person("Heather","Gibson",105, 3,new String[]{"lose 5lbs"," get stronger"});
+
+//      Initial Memebers
         Membership member1 = new Membership(miguel, "elite", 40.00, "monthly", true);
         Membership member2 = new Membership(ashley,"basic", 20.00, "monthly", true );
         Membership member3 = new Membership(heather, "gold", 10.00, "monthly", true);
@@ -35,12 +33,23 @@ public class GymApp {
 
         GymApp app = new GymApp(currentMembers);
 
-        System.out.println("Total members: " + GymApp.getTotalMembers());
-        app.addMember(app.memberships, new Membership(
-                new Person("rachel", "castaneda", 110,57, new String[]{"get muscle", "do 2 push-ups"}), "elite", 400.00, "annual", true)
+//        System.out.println("Total members: " + GymApp.getTotalMembers());
+//        app.addMember(app.memberships, new Membership(
+//                new Person("rachel", "castaneda", 110,57, new String[]{"get muscle", "do 2 push-ups"}), "elite", 400.00, "annual", true)
+//
+//        );
 
-        );
 
+
+//        Menu to display options
+//        System.out.println("\nWelcome to GYM APP, What would you like to do");
+//        System.out.println("0 - exit");
+//        System.out.println("1 - Apply for a membership");
+//        System.out.println("2 - Look for our gyms around the area");
+
+
+
+//      Loop to display current members
         for(Membership member : currentMembers){
 //            System.out.println(member.getPerson().firstName);
             printPersonInfo(member.getPerson());
@@ -61,7 +70,8 @@ public class GymApp {
     // Print Person Info
     public static void printPersonInfo(Person personObj){
 
-        System.out.println("Person's information below:\n");
+        System.out.println("\nPerson's information below:");
+        System.out.println("-----------------------------");
         System.out.printf("First Name: %s\n" +
                 "Last Name: %s\n" +
                 "Weight: %d\n" +
