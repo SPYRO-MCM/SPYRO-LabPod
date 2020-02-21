@@ -76,7 +76,48 @@ public class MatthewsJavaProblems {
         return sum;
     }
 
+//================================================== WEEK 3 ==========================================================//
+
+// TODO: Problem 1
+// Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+    public static String stringTimes(String str, int n) {
+        String result = "";
+        for (int i=0; i<n; i++) {
+            result = result + str;  // could use += here
+        }
+        return result;
+    }
+
+// TODO: Problem 2
+//Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.
+
+    public static String stringX(String str) {
+        String result = "";
+        for (int i=0; i<str.length(); i++) {
+            // Only append the char if it is not the "x" case
+            if (!(i > 0 && i < (str.length()-1) && str.substring(i, i+1).equals("x"))) {
+                result = result + str.substring(i, i+1); // Could use str.charAt(i) here
+            }
+        }
+        return result;
+    }
+
+// TODO: Problem 3
+// Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+    public static String stringBits(String str) {
+        String result = "";
+        // Note: the loop increments i by 2
+        for (int i=0; i<str.length(); i+=2) {
+            result = result + str.substring(i, i+1);
+            // Alternately could use str.charAt(i)
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
+
         // TODO: For Week 1 - Problem 1
 //        System.out.println(mixStart("mix"));
 //        System.out.println(mixStart("pix"));
@@ -87,18 +128,32 @@ public class MatthewsJavaProblems {
         // TODO: For Week 1 - Problem 3
 //        System.out.println(intMax(5,10,100));
 //        System.out.println(intMax(100,1000,10000));
+
         // TODO: For Week 2 - Problem 1
-          System.out.println(notString("candy"));
-          System.out.println(notString("x"));
-          System.out.println(notString("not bad"));
+//          System.out.println(notString("candy"));
+//          System.out.println(notString("x"));
+//          System.out.println(notString("not bad"));
         // TODO: For Week 2 - Problem 2
-          System.out.println(backAround("cat"));
-          System.out.println(backAround("Hello"));
-          System.out.println(backAround("a"));
+//          System.out.println(backAround("cat"));
+//          System.out.println(backAround("Hello"));
+//          System.out.println(backAround("a"));
         // TODO: For Week 2 - Problem 3
-          System.out.println(sumDouble(1, 2));
-          System.out.println(sumDouble(3, 2));
-          System.out.println(sumDouble(2, 2));
+//          System.out.println(sumDouble(1, 2));
+//          System.out.println(sumDouble(3, 2));
+//          System.out.println(sumDouble(2, 2));
+
+        // TODO: For Week 3 - Problem 1
+            System.out.println(stringTimes("Hi", 5));
+            System.out.println(stringTimes("Cool", 7));
+            System.out.println(stringTimes("Nice", 10));
+        // TODO: For Week 3 - Problem 2
+            System.out.println(stringX("xabx"));
+            System.out.println(stringX("xabcefgx"));
+            System.out.println(stringX("abcdefg"));
+        // TODO: For Week 3 - Problem 3
+            System.out.println(stringBits("Hi"));
+            System.out.println(stringBits("Welcome"));
+            System.out.println(stringBits("Good"));
     }
 
 }
